@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	a{
+		text-decoration: none;
+	}
+	ul{
+		list-style: none;
+	}
+	#container{
+		width: 520px;
+		height: 280px;
+		margin: 50px auto;
+		position: relative;
+	}
+	#nav li, #arrows span {
+		float: left;
+		width: 20px;
+		height: 20px;
+		background: #000;
+		color: #fff;
+		margin-right: 5px;
+		text-align: center;
+		cursor :pointer;
+	}
+	#nav{
+		position:absolute;
+		right: 20px;
+		bottom: 10px;
+		z-index: 9999;
+	}
+	#arrows{
+		position: absolute;
+		left: 20px;
+		bottom: 10px;
+		z-index: 9999;
+	}
+	#content img{
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	
+	#nav li.selected{
+		background:orange;
+	}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<ul id="nav">
+			<li class="selected">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+			<div id="content">
+				<a href=""><img src="img/1.jpg" alt=""></a>
+				<a href=""><img src="img/2.jpg" alt=""></a>
+				<a href=""><img src="img/3.jpg" alt=""></a>
+				<a href=""><img src="img/4.jpg" alt=""></a>
+			</div>
+			<div id="arrows">
+				<span id="prev"> &lt;</span>
+				<span id="next"> &gt;</span>
+			</div>
+	</div>
+	<script src="jslib.js"></script>
+	<script>
+		var oContainer= document.getElementById("container");
+		var oNav= document.getElementById("nav");
+		var aLi= oNav.getElementsByTagName("li");
+		var oContent=document.getElementById("content");
+		var aImg=oContent.getElementsByTagName("img");
+		var oPrev=document.getElementById("prev");
+		var oNext=document.getElementById("next");
+		var zIndex=4;
+		var num=0;
+		for(var i=0;i<aLi.length;i++){
+			aImg[i].style.zIndex=aImg.length-i;
+			aLi[i].index=i;
+			aLi[i].onmouseover=function(){
+				changeImg(this.index);
+			};
+
+		}
+
+		oNext.onclick=function(){
+			++num;
+			num=num%aLi.length;
+			changeImg(num);
+		};
+
+		oPrev.onclick=function(){
+			--num;
+			num=(num+aLi.length)%aLi.length;
+			changeImg(num);
+		};
+
+
+		function changeImg(idx){
+					for(var i=0;i<aLi.length;i++){
+						aLi[i].className="";
+					}
+						aLi[idx].className="selected";
+					var oImg=aImg[idx];
+					oImg.style.opacity=0;
+					oImg.style.filter="alpha(opacity=0)";
+					oImg.style.zIndex=++zIndex;
+
+					animate(oImg,{opacity:100});
+		}
+
+		
+	</script>
+</body>
+</html>
