@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul{
+		list-style: none;
+	}
+	#container{
+		width: 390px;
+		height: 200px;
+		margin: 100px auto;
+		border: 1px solid #000;
+		position: relative;
+		overflow: hidden;
+	}
+	#content{
+		width: 520px;
+		position: absolute;
+	}
+	#content li{
+		width: 120px;
+		height: 120px;
+		background: #000;
+		color: #fff;
+		font-size: 30px;
+		text-align: center;
+		line-height: 120px;
+		float: left;
+		margin-right: 10px;
+	}
+	#prev,#next{
+		width: 50px;
+		height: 30px;
+		margin-right: 10px;
+		background: orange;
+		color: #fff;
+		float: left;
+		text-align: center;
+		line-height: 30px;
+		cursor: pointer;
+	}
+	#arrows{
+		width: 120px;
+		height: 30px;
+		position: absolute;
+		left: 50%;
+		margin-left: -60px;
+		bottom: 18px;
+	}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<ul id="content">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<div id="arrows">
+			<span id="prev">向左</span>
+			<span id="next">向右</span>
+		</div>
+	</div>
+	<script>
+		var oContent=document.getElementById("content");
+		var oPrev=document.getElementById("prev");
+		var oNext=document.getElementById("next");
+		var speed=5;
+		oContent.innerHTML+=oContent.innerHTML;
+		oContent.style.width=oContent.offsetWidth*2 + "px";
+
+		setInterval(function(){
+			oContent.style.left=oContent.offsetLeft - speed + "px";
+			if (oContent.offsetLeft<=-oContent.offsetWidth/2) {
+				oContent.style.left=0;
+			}
+			if (oContent.offsetLeft>0) {
+				oContent.style.left=-oContent.offsetWidth/2 + "px";
+			}
+		},100);
+
+		oNext.onmouseover=function(){
+			speed=-5;
+		};
+		oPrev.onmouseover=function(){
+			speed=5;
+		};
+	</script>
+</body>
+</html>
