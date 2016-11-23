@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div1"></div>
+
+<script>
+    //3.3.1
+//    var x=Math.random();
+//    var y=Math.random();
+//    console.log(x);
+//    console.log(y);
+//    console.log(x>y? x :y);
+    //3.3.2
+//    var oDiv=document.getElementById('div1');
+//    var today=new Date();
+//    var year=today.getFullYear();
+//    if((year%4==0 && year%100!==0) || year%400==0){
+//        oDiv.innerHTML='今年是闰年'
+//    }else{
+//        oDiv.innerHTML='今年不是闰年'
+//    }
+    //4.3.1
+//    var age=prompt('请输入你的年龄')
+//    var msg;
+//
+//       if(age>0 && age <14)
+//           msg='儿童';
+//       else if(age >=14&& age <24)
+//           msg='青少年';
+//       else if(age>=24&&age<40)
+//            msg='青年';
+//       else if(age>=40&&age<60)
+//            msg='中年';
+//       else if( age>=60)
+//            msg='老年';
+//       else msg='输入错误';
+//
+//    document.write(msg);
+    //4.3.2
+//    var weekday;
+//    weekday = prompt("请输入一个表示今天是星期几的数字:");
+//    weekday=parseInt(weekday)//将字符串转换为整数
+//    switch(weekday)
+//    {
+//        case 0: alert("今天是星期日");break;
+//        case 1: alert("今天是星期一");break;
+//        case 2: alert("今天是星期二");break;
+//        case 3: alert("今天是星期三");break;
+//        case 4: alert("今天是星期四");break;
+//        case 5: alert("今天是星期五");break;
+//        case 6: alert("今天是星期六");break;
+//        default:
+//            alert("输入有误");break;
+//    }
+    //4.3.3
+//    function factorial(n){
+    //        return (n<=1 ? 1 :n*factorial(n-1));
+    //    }
+    //   alert( factorial(10));
+    //4.3.4
+//    var sum=0;
+//    for(var i=1;i<11;i++){
+//        sum+=factorial(i);
+//    }
+//    alert(sum);
+//    function factorial(n){
+//        return (n<=1 ? 1 :n*factorial(n-1));
+//    }
+    //4.3.5
+//    var i,line;
+//    for(var line=1;line<=5;line++){
+//        for(var i=1;i<=line;i++){
+//            document.write(i+'&nbsp');
+//
+//        }
+//        document.write('<br>');
+//    }
+    //4.3.6
+//    function star(num){
+//            for(var i=1;i<=num;i++){
+//                for(var k=1;k<=num-i;k++){
+//                    document.write("&nbsp");
+//                }
+//                for(var j=1;j<=i;j++){
+//                    document.write('*');
+//                    document.write('&nbsp');
+//                }
+//                document.write('<br>');
+//            }
+//        }
+//        star(5);
+
+    //4.3.7
+//    var x;
+//    for(x=100;x<=999;x++){
+//        if(x%4==2&&x%7==3&&x%9==5){
+//            document.write('x='+x+"<br>");
+//        }
+//    }
+    //4.3.8
+//    var x;
+//    var num=0;
+//    for(x=1000;x<=9999;x++){
+//        var iFour=Math.floor(x/1000);
+//        var iThree=Math.floor(x/100)-iFour*10;
+//        var iTwo=Math.floor(x/10)-iFour*100-iThree*10;
+//        if(x%13==0&&iFour==iThree+iTwo){
+//            document.write('x='+x+'&nbsp&nbsp&nbsp&nbsp');
+//            num++;
+//            if(num%4==0){
+//                document.write('<br>');
+//            }
+//        }
+//    }
+//    document.write('<br>'+'一共输入了'+num+'个数');
+    //5.3.1
+//    var x;
+//    x=prompt('请输入x的值');
+//    var result=4*x*x+3*x+2;
+//    alert(result);
+    //5.3.2
+//    var x,y;
+//    x=prompt('请输入x的值');
+//    y=prompt('请输入y的值');
+//    var result=getMin(x,y);
+//    alert(result);
+//    function getMin(a,b){
+//        var iMin=0;
+//        if(a>=b){
+//            iMin=b;
+//        }else{
+//            iMin=a;
+//        }
+//        return iMin;
+//    }
+    //5.3.3
+//    var x;
+//    var arr=[];
+//    for(x=1;x<=1000;x++){
+//        if(getNum(x)==null){
+//
+//        }else{
+//            document.write('x='+x +'&nbsp&nbsp&nbsp&nbsp');
+//            arr.push(x);
+//            if(arr.length%6==0){
+//                document.write('<br>');
+//            }
+//        }
+//    }
+//    function getNum(num){
+//        if(num%3==0&&num%5==0&&num%7==0){
+//            return num;
+//        }else{
+//            return null;
+//        }
+//    }
+    //5.3.4(随机数的调用和方法)
+//   function getRangeRandom(low,high){
+//          return Math.floor(Math.random()*(high-low+1)+low);
+//       }
+//        document.write(getRangeRandom(1,2));
+//        function getRangeRandom2(low,high){
+//            return Math.random()*(high-low)+low;
+//        }
+//        document.write(getRangeRandom2(2,10));
+    //5.3.4
+//    function getPrime(){
+//        var arr=[];
+//        for(var x=100;x<=1000;x++){
+//            var bFlag=true;
+//            for(var i=2;i<=50;i++){
+//                if(x%i==0){
+//                    bFlag= false;
+//                    break;
+//                }
+//            }
+//
+//            if(bFlag){
+//                document.write('x='+x+'&nbsp');
+//                arr.push(x);
+//                if(arr.length%6==0){
+//                    document.write('<br>');
+//                }
+//            }
+//        }
+//    }
+//    getPrime();
+    //5.3.5
+//    var x=factorial(12);
+//    var y=factorial(10);
+//    document.write(x-y);
+//    function factorial(n){
+//        var num=1;
+//       for(var i=1;i<=n;i++){
+//           num*=i;
+//       }
+//       return num;
+//    }
+    //5.3.7
+//    function fibonacci(n){
+//        var arr=[1,1];
+//        if(n==1||n==2){
+//            return 1;
+//        }else{
+//            for(var i=2;i<n;i++){
+//                arr[i]=arr[i-1]+arr[i-2];
+//            }
+//            return arr[i-1];
+//        }
+//
+//    };
+//
+//    function fibonacci2(n){
+//            if(n==1||n==2){
+//                return 1;
+//            }else{
+//                return  fibonacci2(n-1)+fibonacci2(n-2);
+//            }
+//    }
+//
+//    document.write(fibonacci(5));
+    //5.3.8
+//    var arr=[100,500,1000,10000];
+//    for(var i=0;i<arr.length;i++){
+//        document.write('PI='+getPI(arr[i]) +'<br>');
+//    }
+//    function getPI(n){
+//        var sum=0;
+//        for(var i=1;i<=n;i++){
+//            sum+=(Math.pow(-1,i-1)/(2*i-1));
+//        }
+//        return 4*sum;
+//    }
+    //5.3.9
+//    var arr=[];
+//    var num=0;
+//    for(var i=1;i<=10000;i++){
+//        for(var j=0;j<3;j++){
+//           arr[j]= getRangeRandom(1,9);
+//            if(arr[j]==8){
+//                num++;
+//                break;
+//            }
+//        }
+//    }
+//    document.write(num/10000);
+//
+//    function getRangeRandom(low,high){
+//       return Math.ceil(Math.random()*(high-low)+low);
+//    }
+    //6.3.1
+//    var x=prompt('请输入数值');
+//    var a=x*x;
+//    var b=Math.sqrt(x);
+//    var c=Math.log(x);
+//    document.write('平方='+a+'<br>'+'平方根='+b+'<br>'+'自然对数='+c+'<br>');
+    //6.3.2
+//    function getRangeRandom(){
+//       return Math.floor(Math.random()*101) ;
+//    }
+//    alert(getRangeRandom());
+    //6.3.3
+//    var day=new Date()
+//    var year=day.getFullYear();
+//    var mouth=day.getMonth();
+//    var today=day.getDate();
+//    var hours=day.getHours();
+//    var minutes=day.getMinutes();
+//    var seconds=day.getSeconds();
+//    var week=day.getDay();
+//    document.write('现在是'+year+'年'+mouth+'月'+today+'日'+hours+'点'+minutes+'分'+seconds+'秒'+'('+'星期'+week+'),'+'欢迎您的到访！');
+    //6.3.4
+//    function collectDigits(str){
+//        var result="";
+//        for(var i=0;i<str.length;i++){
+//           var ch=str.charAt(i);
+//            if(ch>='0' && ch<='9'){
+//                result+=ch;
+//            }
+//        }
+//        return result;
+//    }
+//    document.write(collectDigits("1abc23def4"));
+    //6.3.5
+//    function merge(s1,s2){
+//        var result='';
+//        var length=s1.length>s2.length ? s1.length :s2.length;
+//        for(var i=0;i<length;i++){
+//            result+=s1.charAt(i)+s2.charAt(i);
+//        }
+//        return result;
+//    }
+//    document.write(merge('123456','abc'));
+    //6.3.6
+//    var arr=[];
+//    var sum=0;
+//    var average;
+//     for(var i=0;i<7;i++){
+//         arr[i]=parseFloat(prompt('请输入成绩'));
+//         if(arr[i]<60){
+//             document.write('不及格分数='+arr[i]+'<br>');
+//         }
+//         sum+=arr[i];
+//     }
+//        average=sum/7;
+//    document.write('总分='+sum+'<br>'+'平均分='+average);
+    //6.3.7
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
