@@ -28,37 +28,37 @@
 </head>
 <body>
 <div id="container"></div>
-    <script>
-        var oContainer=document.getElementById('container');
-        var count=0;
-        for(var i=0;i<9;i++){
-           var oImg=new Image();
-            oImg.onload=function(){
-                count++;
-                if(count==9){
-                    loadSuccess();
-                }
-            };
-            oImg.src='img/'+(i+1)+'.jpg';
-            oContainer.appendChild(oImg);
-        }
-
-        function loadSuccess(){
-            var aImg=oContainer.getElementsByTagName('img');
-            for(var i=0;i<aImg.length;i++){
-                aImg[i].style.transitionDelay=i*50+'ms';
-                aImg[i].style.transform='rotateY('+40*(i+1)+'deg)'+'translateZ(200px)';
-
+<script>
+    var oContainer=document.getElementById('container');
+    var count=0;
+    for(var i=0;i<9;i++){
+        var oImg=new Image();
+        oImg.onload=function(){
+            count++;
+            if(count==9){
+                loadSuccess();
             }
-        }
-        var num=1;
-        oContainer.onclick=function(){
-            this.style.transform='rotateY('+-40*num+'deg)';
-            num++;
         };
+        oImg.src='img/'+(i+1)+'.jpg';
+        oContainer.appendChild(oImg);
+    }
+
+    function loadSuccess(){
+        var aImg=oContainer.getElementsByTagName('img');
+        for(var i=0;i<aImg.length;i++){
+            aImg[i].style.transitionDelay=i*50+'ms';
+            aImg[i].style.transform='rotateY('+40*(i+1)+'deg)'+'translateZ(200px)';
+
+        }
+    }
+    var num=1;
+    oContainer.onclick=function(){
+        this.style.transform='rotateY('+-40*num+'deg)';
+        num++;
+    };
 
 
 
-    </script>
+</script>
 </body>
 </html>
