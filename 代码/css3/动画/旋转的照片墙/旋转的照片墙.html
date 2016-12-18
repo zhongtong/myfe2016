@@ -1,0 +1,238 @@
+    <!DOCTYPE html>
+    <html>
+    <head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    html{
+    width: 100%;
+    height: 100%;
+    }
+    body{
+    width: 100%;
+    height: 100%;
+    background: url(img/bg.jpg);
+    }
+    #container .img{
+    width: 125px;
+    height: 125px;
+    border:5px solid #fff;
+    -webkit-box-shadow: 2px 2px 2px  rgba(0,0,0,0.7);
+    -moz-box-shadow: 2px 2px 2px  rgba(0,0,0,0.7);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.7);
+    position: absolute;
+    left:-500px;
+    top:-500px;
+    transition:all 1s ease-out;
+    }
+        #container span{
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-repeat:no-repeat;
+            opacity:0;
+            transition:all 1s ease-out;
+        }
+        #prev,#next{
+            width: 60px;
+            height: 60px;
+            background-color:#fff;
+            top:50%;
+            margin-top:-30px;
+            border-radius: 10%;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: center;
+            display:none;
+        }
+        #prev{
+            background-image: url(img/prev.png);
+            left:-20px;
+        }
+        #next{
+            background-image: url(img/next.png);
+            right:-20px;
+        }
+    </style>
+    </head>
+    <body>
+    <div id="container"></div>
+    <span id="prev"></span>
+    <span id="next"></span>
+    <script>
+    (function(){
+    var ROW= 4,
+        COL= 6,
+        NUM=ROW*COL,
+        count= 0,
+        BigImageWidth = 750,
+        BigImageHeight = 500,
+        ThumbsWidth=125,
+        ThumbsHeight=125;
+    var oContainer=document.getElementById('container');
+    for(var i=0;i<NUM;i++){
+    var oThumbsImg=new Image();
+    oThumbsImg.onload=function(){
+        count++;
+        if(count==NUM*2){
+            loadSuccess();
+        }
+    };
+    oThumbsImg.src="img/thumbs/"+(i+1)+".jpg";
+    var oBigImage=new Image();
+    oBigImage.onload=function(){
+        count++;
+        if(count==NUM*2){
+            loadSuccess();
+        }
+    };
+    oBigImage.src="img/"+(i+1)+".jpg";
+    }
+
+    //图片预处理完成后执行的函数
+    function loadSuccess(){
+    var index=0;
+    for(var i=0;i<ROW;i++){
+        for(var j=0;j<COL;j++){
+            index++;
+            //创建24个div元素
+            var oDiv=document.createElement('div');
+            oDiv.style.backgroundImage="url(img/thumbs/"+index+".jpg)";
+            oDiv.className='img';
+            oDiv.pos={
+                row:i,
+                col:j
+            };
+            oDiv.innerHTML='<span></span>';
+            oDiv.index=index;
+            oContainer.appendChild(oDiv);
+        }
+    }
+    var aDiv=oContainer.getElementsByTagName('div');
+    var oPrev=document.getElementById('prev');
+    var oNext=document.getElementById('next');
+    var iNow=0;
+    var bodyWidth=document.body.clientWidth;
+    var bodyHeight=document.body.clientHeight;
+    var oDivWidth=aDiv[0].offsetWidth;
+    var oDivHeight=aDiv[0].offsetHeight;
+    //计算行间距和列间距
+    var iColGap=(bodyWidth-COL*oDivWidth)/(COL+1);
+    var iRowGap=(bodyHeight-ROW*oDivHeight)/(ROW+1);
+
+    //使用定时器使div飞入相应的位置
+    var timerCount=NUM;
+    timer=setInterval(function(){
+        timerCount--;
+        aDiv[timerCount].style.left=(iColGap+oDivWidth)*aDiv[timerCount].pos.col+iColGap+'px';
+        aDiv[timerCount].style.top=(iRowGap+oDivHeight)*aDiv[timerCount].pos.row+iRowGap+'px';
+        aDiv[timerCount].style.transform='rotate('+(Math.random()*40-20)+'deg)';
+        if(timerCount==0){
+            clearInterval(timer);
+        }
+    },200);
+
+    //给每个div绑定单击事件
+    var flag=false;
+    oContainer.onclick=function(e){
+        clearInterval(timer);
+        var target= e.target||window.event.srcElement;
+        if(target.className!='img'){
+            target=target.parentNode;
+        }
+        if(flag){//要散开
+            for(var i=0;i<NUM;i++){
+                aDiv[i].style.borderWidth='5px';
+                aDiv[i].style.transform='rotate('+(Math.random()*40-20)+'deg)';
+                aDiv[i].style.left=(iColGap+oDivWidth)*aDiv[i].pos.col+iColGap+'px';
+                aDiv[i].style.top=(iRowGap+oDivHeight)*aDiv[i].pos.row+iRowGap+'px';
+               aDiv[i].style.backgroundImage='url(img/thumbs/'+aDiv[i].index+'.jpg)';
+                var oSpan = aDiv[i].getElementsByTagName("span")[0];
+                oSpan.style.opacity=0;
+                oPrev.style.display=oNext.style.display='none';
+
+            }
+        }else{//要合上
+            for (var i = 0; i < NUM; i++) {
+                aDiv[i].style.borderWidth = "1px";
+                aDiv[i].style.transform = "rotate(0deg)";
+                aDiv[i].style.left = (bodyWidth - BigImageWidth) / 2 + (oDivWidth - 8) * aDiv[i].pos.col + "px";
+                aDiv[i].style.top = (bodyHeight - BigImageHeight) / 2 + (oDivHeight - 8) * aDiv[i].pos.row + "px";
+                var oSpan = aDiv[i].getElementsByTagName("span")[0];
+                oSpan.style.backgroundImage = "url(img/"+ target.index +".jpg)";
+
+                var x=-ThumbsWidth*aDiv[i].pos.col;
+                var y=-ThumbsHeight*aDiv[i].pos.row;
+                oSpan.style.backgroundPosition=x+'px '+y+'px';
+                oSpan.style.opacity=1;
+                oPrev.style.display=oNext.style.display='block';
+                iNow=target.index;
+
+            }
+        }
+        flag=!flag;
+    };
+        //左右按钮注册单击事件
+        oPrev.onclick=oNext.onclick=function(){
+            if(this==oPrev){
+                iNow--;
+                if(iNow==0){
+                    iNow=NUM;
+                }
+            }else{
+                iNow++;
+                if(iNow==NUM+1){
+                    iNow=1;
+                }
+            }
+
+            var arr=[];
+            for(var i=0;i<NUM;i++){
+                arr.push(i);
+            }
+            arr.sort(function(){
+                return Math.random()-0.5;
+            })
+
+            var timer2=setInterval(function(){
+                var item=arr.pop();
+                var oSpan=aDiv[item].getElementsByTagName('span')[0];
+                    oSpan.style.backgroundImage='url(img/'+iNow+'.jpg)';
+                if(arr.length==0){
+                    clearInterval(timer2);
+                }
+
+            },30);
+
+
+
+
+
+
+
+        };
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    })();
+    </script>
+    </body>
+    </html>
