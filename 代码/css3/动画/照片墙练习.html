@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: #eeeeee;
+        }
+        #container{
+            width: 480px;
+            height: 320px;
+            margin:100px auto;
+        }
+        #container img{
+            width: 480px;
+            height: 320px;
+            border:1px solid #000;
+            box-shadow:5px 5px 5px rgba(0,0,0,0.5);
+            position: absolute;
+        }
+        #container img:nth-child(1){
+            transform:rotate(30deg);
+        }
+        #container img:nth-child(2){
+            transform:rotate(-20deg);
+        }
+        #container img:hover{
+            z-index:1;
+            transform:rotate(0deg);
+            transition:all 1s ease 0.2s;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <img src="imgs/1.jpg" alt=""/>
+    <img src="imgs/2.jpg" alt=""/>
+</div>
+</body>
+</html>
