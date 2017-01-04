@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background: #000000;
+            perspective:1000px;
+        }
+        @keyframes rotate{
+            from{
+
+            }to{
+            transform:rotateY(-360deg);
+                         }
+        }
+
+        #container{
+            width: 200px;
+            height: 200px;
+            margin:100px auto;
+            transform-style:preserve-3d;
+            animation:rotate 6s linear infinite;
+        }
+
+        .cube{
+            width: 200px;
+            height: 200px;
+            background: #ffffff;
+            opacity:0.6;
+            font-size:60px;
+            text-align:center;
+            line-height:200px;
+            position: absolute;
+            border:1px solid #cccccc;
+            border-radius:10px;
+        }
+        .one{
+            transform:rotateY(180deg) translateZ(100px);
+        }
+        .two{
+            transform:rotateX(90deg) translateZ(100px);
+        }
+        .three{
+            transform:rotateY(-90deg) translateZ(100px);
+        }
+        .four{
+            transform:rotateY(90deg) translateZ(100px);
+        }
+        .five{
+            transform:rotateX(-90deg) translateZ(100px);
+        }
+        .six{
+            transform:translateZ(100px);
+        }
+        .cube2{
+            width:100px;
+            height: 100px;
+            background: #ffffff;
+            opacity:1;
+            font-size:40px;
+            text-align:center;
+            line-height:100px;
+            position: absolute;
+            border:1px solid #cccccc;
+            border-radius:50%;
+            left:50%;
+            top:50%;
+            margin-left:-50px;
+            margin-top:-50px;
+        }
+        div.a{
+            background:url(imgs/1.jpg) no-repeat center;
+            background-size:100px 100px;
+        }
+        div.b{
+            background:url(imgs/2.jpg) no-repeat center;
+            background-size:100px 100px;
+        }
+        div.c{
+            background:url(img2/IMG_20161005_095244.jpg) no-repeat center;
+            background-size:100px 100px;
+        }
+        div.d{
+            background:url(imgs/4.jpg) no-repeat center;
+            background-size:100px 100px;
+        }
+        div.e{
+            background:url(imgs/5.jpg) no-repeat center;
+            background-size:100px 100px;
+        }
+        div.f{
+            background:url(imgs/6.jpg) no-repeat center;
+            background-size:100px 100px;
+        }
+        .a{
+            transform:rotateY(180deg) translateZ(50px);
+        }
+        .b{
+            transform:rotateX(90deg) translateZ(50px);
+        }
+        .c{
+            transform:rotateY(-90deg) translateZ(50px);
+        }
+        .d{
+            transform:rotateY(90deg) translateZ(50px);
+        }
+        .e{
+            transform:rotateX(-90deg) translateZ(50px);
+        }
+        .f{
+            transform:translateZ(50px);
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="cube one">D</div>
+    <div class="cube two">L</div>
+    <div class="cube three">O</div>
+    <div class="cube four">E</div>
+    <div class="cube five">E</div>
+    <div class="cube six">V</div>
+    <div class="cube2 a"></div>
+    <div class="cube2 b"></div>
+    <div class="cube2 c"></div>
+    <div class="cube2 d"></div>
+    <div class="cube2 e"></div>
+    <div class="cube2 f"></div>
+</div>
+
+</body>
+</html>
