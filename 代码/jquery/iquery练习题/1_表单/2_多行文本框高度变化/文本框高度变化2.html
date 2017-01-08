@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../../jquery-1.12.4.js"></script>
+    <script src="文本框高度变化2.js"></script>
+    <style>
+        #container{
+            position: relative;
+            top:100px;
+            left:100px;
+        }
+        #tab span {
+            width: 60px;
+            height: 44px;
+            background: gray;
+            color: #ffffff;
+            border:1px solid gray;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        #content{
+            width: 300px;
+            height: 100px;
+            border: 1px solid #000;
+            font-size: 9px;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="post">
+    <div id="container">
+        <div id="tab">
+            <span id="bigger" >放大</span>
+            <span id="smaller" >缩小</span>
+        </div>
+        <div>
+            <textarea id="content" rows="8" cols="20">多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.</textarea>
+        </div>
+    </div>
+</form>
+</body>
+</html>
