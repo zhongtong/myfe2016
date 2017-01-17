@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #container{
+            width: 750px;
+            height: 350px;
+            margin-top:60px;
+        }
+        #tab{
+            width: 600px;
+            height: 25px;
+            background: #CCCCCC;
+            box-shadow: 0 2px 2px #efeeed;
+        }
+        #tab li{
+            width: 38px;
+            height: 22px;
+            margin-top: 3px;
+            padding-left: 4px;
+            float: left;
+            text-align: center;
+            line-height: 22px;
+            cursor: pointer;
+            font-size:12px;
+            color:#669;
+        }
+        #tab .many{
+            width: 60px;
+        }
+        #tab li.selected{
+            background: #ffffff;
+        }
+        .sub-main{
+            width: 300px;
+            height: 75px;
+            float: left;
+            margin-top:20px;
+            margin-left: 10px;
+        }
+        .img{
+            width: 48px;
+            height: 48px;
+            float: left;
+        }
+        .content{
+            width: 230px;
+            height: 60px;
+            float: left;
+            font-size:12px;
+            padding-top:1px;
+            padding-left: 8px;
+        }
+        .content h6{
+            width: 200px;
+            height: 14px;
+            font-size:12px;
+            margin-top: 0;
+        }
+        .content h6 a{
+            color:#507BD5;
+        }
+        .content p,span{
+            width: 200px;
+            height: 46px;
+            color:#666;
+            line-height: 20px;
+        }
+        .main{
+            float: left;
+            display: none;
+        }
+        .selectedYou{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="tab">
+        <li class="selected">生活</li>
+        <li>兴趣</li>
+        <li class="many">文化艺术</li>
+        <li class="many">音乐电影</li>
+        <li>本地</li>
+        <li>其他</li>
+    </ul>
+    <div class="main selectedYou">
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g12238-2.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">霓虹灯</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g12247-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">漫天的烟花</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g14153-10.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">尘埃</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g35813-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">想念</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g44725-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">春风十里</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g61581-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">不如你</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+    </div>
+    <div class="main ">
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g85862-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">西瓜俱乐部</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g12247-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">草莓俱乐部</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g14153-10.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">桔子俱乐部</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g35813-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">橙子俱乐部</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g44725-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">香蕉俱乐部</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g61581-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">苹果俱乐部</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g69947-4.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">甜甜的</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g12247-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">告白气球</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g14153-10.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">回到过去</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g35813-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">搁浅</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g44725-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">轨迹</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g61581-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">半岛铁盒</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g71386-5.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">漠河之旅</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g12247-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">呼伦贝尔大草原</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g14153-10.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">哈尔滨</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g35813-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">四平市</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g44725-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">北极光</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g61581-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">额尔古纳</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g71879-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">北京市</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g12247-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">上海市</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g14153-10.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">南京市</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g35813-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">苏州市</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g44725-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">常州市</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g61581-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">宁波市</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g77374-2.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">加勒比海盗</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g12247-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">这个杀手不太冷</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g14153-10.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">环太平洋</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g35813-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">指环王</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g44725-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">惊天魔盗团</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+        <div class="sub-main">
+            <div class="img">
+                <a href="#"></a>
+                <img src="images/g61581-1.jpg" alt=""/>
+            </div>
+            <div class="content">
+                <h6>
+                    <a href="#">小鬼当家</a>
+                    <span>(2880)</span>
+                </h6>
+                <p>让我们拾起散落在上海城市角落里的狗狗文化...</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="../../jquery-1.12.4.js"></script>
+<script>
+    $("#tab li").on("click",function(){
+        $("#tab li").removeClass("selected");
+        $(this).addClass("selected");
+        var index=$(this).index();
+        $(".main").removeClass("selectedYou");
+        $(".main").eq(index).addClass("selectedYou");
+    });
+    var timer;
+    var index=0;
+    function run(){
+        timer=setInterval(function(){
+            index++;
+            index=index%6;
+            $("#tab li").eq(index).trigger("click");
+        },1000);
+    }
+    run();
+    $("#container").hover(function(){
+        clearInterval(timer);
+    },function(){
+        run();
+    });
+</script>
+</body>
+</html>
