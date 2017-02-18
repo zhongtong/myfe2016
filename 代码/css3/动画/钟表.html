@@ -19,6 +19,26 @@
             margin:100px auto;
             position: relative;
         }
+        #dial2 li{
+            font-size:25px;
+            position: absolute;
+        }
+        #dial2 li:nth-child(1){
+            top:5px;
+            left:90px;
+        }
+        #dial2 li:nth-child(2){
+            top:86px;
+            left:176px;
+        }
+        #dial2 li:nth-child(3){
+            top:160px;
+            left:93px;
+        }
+        #dial2 li:nth-child(4){
+            top:86px;
+            left:12px;
+        }
         #dial li{
             width: 2px;
             height: 6px;
@@ -56,10 +76,19 @@
             left: 100px;
             top:20px;
         }
+        #clock{
+            background: url(imgs/7.jpg) no-repeat center;
+        }
     </style>
 </head>
 <body>
 <div id="clock">
+    <ul id="dial2">
+        <li>12</li>
+        <li>3</li>
+        <li>6</li>
+        <li>9</li>
+    </ul>
     <ul id="dial"></ul>
     <div id="hour"></div>
     <div id="minute"></div>

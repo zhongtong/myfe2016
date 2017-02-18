@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        img{
+            border:0;
+        }
+        #container{
+            width: 300px;
+            height: 300px;
+            margin:100px auto;
+            position: relative;
+        }
+        #iga{
+            position: absolute;
+            right:0;
+            bottom:0;
+            transition: transform 1s ease;
+        }
+        #image img{
+            position: absolute;
+            right:0;
+            bottom:0;
+            transition: transform 1s ease;
+        }
+        #image img:nth-child(1){
+            transition: transform 1s ease;
+        }
+        #image img:nth-child(2){
+            transition: transform 1s ease 0.2s;
+        }
+        #image img:nth-child(3){
+            transition: transform 1s ease 0.4s;
+        }
+        #image img:nth-child(4){
+            transition: transform 1s ease 0.6s;
+        }
+        #image img:nth-child(5){
+            transition: transform 1s ease 0.8s;
+        }
+        #container .show1{
+            transform:rotateZ(-360deg);
+        }
+        #container .show2{
+            transform: translate(0,-200px) rotateZ(-720deg) ;
+        }
+        #container .show3{
+            transform: translate(-50px,-150px) rotateZ(-720deg) ;
+        }
+        #container .show4{
+            transform: translate(-100px,-100px) rotateZ(-720deg) ;
+        }
+        #container .show5{
+            transform: translate(-150px,-50px) rotateZ(-720deg);
+        }
+        #container .show6{
+            transform: translate(-200px,0) rotateZ(-720deg);
+        }
+        #container .hide{
+            transform:translate(0,0)  rotateZ(720deg)  ;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <img src="img/home.png" alt="" style="z-index: 2;" id="iga"/>
+   <div id="image">
+       <img src="img/close.png" alt=""/>
+       <img src="img/full.png" alt=""/>
+       <img src="img/open.png" alt=""/>
+       <img src="img/prev.png" alt=""/>
+       <img src="img/refresh.png" alt=""/>
+   </div>
+</div>
+<script>
+    var oContainer=document.getElementById('container');
+    var oIga=document.getElementById('iga');
+    var oImage=document.getElementById('image');
+    var aImg=oImage.getElementsByTagName('img');
+    var bFlag=false;
+
+        oIga.onclick=function(){
+            if(bFlag==false){
+                for(var i=0;i<aImg.length;i++){
+
+                    oIga.className='show1';
+                    aImg[0].className='show2';
+                    aImg[1].className='show3';
+                    aImg[2].className='show4';
+                    aImg[3].className='show5';
+                    aImg[4].className='show6';
+                    bFlag=true;
+                }
+            }else{
+                for(var j=0;j<aImg.length;j++){
+                    oIga.className='hide';
+                    aImg[j].className='hide';
+                    bFlag=false;
+                }
+            }
+
+        };
+    for(var i=0;i<aImg.length;i++){
+        aImg[i].index=i;
+        aImg[i].onclick=function(){
+            aImg[this.index].style.transform='scale('+2+')';
+            aImg[this.index].style.transition='scale 1s ease';
+
+        };
+    }
+
+
+
+
+</script>
+</body>
+</html>

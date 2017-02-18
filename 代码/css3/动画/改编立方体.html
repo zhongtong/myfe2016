@@ -21,11 +21,28 @@
             transform-style:preserve-3d;
             animation:rotate 2s linear infinite;
         }
+        #container2{
+            width: 200px;
+            height: 200px;
+            margin:100px auto;
+            /*background: #ff0000;*/
+            /*opacity:0.5;*/
+            transform-style:preserve-3d;
+            animation:rotate2 2s linear infinite;
+        }
         @keyframes rotate{
             from{
 
             }to{
                  transform: rotateY(-360deg);
+             }
+        }
+        @keyframes rotate2{
+            from{
+
+            }to{
+                 transform: rotateY(-360deg) rotateX(-360deg) rotateZ(-360deg);
+
              }
         }
         .cube{
@@ -126,12 +143,14 @@
     <div class="cube four">4</div>
     <div class="cube five">5</div>
     <div class="cube six">6</div>
-    <div class="cube2 a"></div>
-    <div class="cube2 b"></div>
-    <div class="cube2 c"></div>
-    <div class="cube2 d"></div>
-    <div class="cube2 e"></div>
-    <div class="cube2 f"></div>
+    <div id="container2">
+        <div class="cube2 a"></div>
+        <div class="cube2 b"></div>
+        <div class="cube2 c"></div>
+        <div class="cube2 d"></div>
+        <div class="cube2 e"></div>
+        <div class="cube2 f"></div>
+    </div>
 </div>
 </body>
 </html>
